@@ -33,7 +33,6 @@ The model is trained based on single class since our model has to detect the int
 Below table shows the configuration of model which is number of hidden layers and input features that are included into the model.
 
 Layer                          Shape                     Parameters
-====================================================================
 Input Layer                    118                       0
 Encoder                        64                        7616
 Batch Normalization            64                        256
@@ -42,7 +41,7 @@ Batch Normalization            32                        128
 Decoder                        64                        2080
 Batch Normalization            64                        256
 Output Layer                   118                       7670
-====================================================================
+
 Mean squared error was used as error metric and adam optimizer was used while converging the cost function. The output layer was configured to be linear which was equivalen to the number of features given at the input layer. 
 
 #### Experimental Results
