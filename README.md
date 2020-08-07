@@ -29,7 +29,9 @@ All of the categorical variables were converted using the one-hot encoding which
 The model is trained based on single class since our model has to detect the intrusion which is very rare. The training set only included the labels with normal connections. But in the validation and test set both labels of the data are included. THe total dataset was split into 60% of training set, 20% of cross validation set and remaining 20% was test set.
 
 #### Model Configuration and Error Metric
+
 Below table shows the configuration of model which is number of hidden layers and input features that are included into the model.
+
 Layer (type)                 Output Shape              Param #   
 =================================================================
 (InputLayer)                  (None, 118)               0         
