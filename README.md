@@ -23,7 +23,7 @@ In this section, we discuss details regarding the datasets, preprocessing, and e
 The dataset used for model evaluation is KDD Cup 1999 Dataset products. It includes 126208 records and total of 42 attributes. There are total of 33 continuous attributes and 9 continuous attributes. The attributes such as protocol_type defines the type of protocol used by the packet to get into the network and service which corresponds to network service on the destination, e.g., http, telnet, etc. 
 
 #### Preprocessing
-All of the categorical variables were converted using the one-hot encoding which eventually made total 117 attributes for the dataset. Hence, the remaning continuous attributes were normalized using the standard scaler formula.
+Contained duplicate values removal of those duplicate records and then all of the categorical variables were converted using the one-hot encoding which eventually made total 117 attributes for the dataset. Hence, the remaning continuous attributes were normalized using the standard scaler formula.
 
 #### Validation and Testing
 The model is trained based on single class since our model has to detect the intrusion which is very rare. The training set only included the labels with normal connections. But in the validation and test set both labels of the data are included. THe total dataset was split into 60% of training set, 20% of cross validation set and remaining 20% was test set.
@@ -32,26 +32,20 @@ The model is trained based on single class since our model has to detect the int
 
 Below table shows the configuration of model which is number of hidden layers and input features that are included into the model.
 
-Layer (type)                 Output Shape              Param #   
-=================================================================
-(InputLayer)                  (None, 118)               0         
-_________________________________________________________________
-Encoder(Dense)                (None, 64)                7616      
-_________________________________________________________________
-batch_normalization           (None, 64)                256       
-_________________________________________________________________
-Coding layer(Dense)           (None, 32)                2080      
-_________________________________________________________________
-batch_normalization           (None, 32)                128       
-_________________________________________________________________
-Decoder(Dense)                (None, 64)                2112      
-_________________________________________________________________
-batch_normalization           (None, 64)                256       
-_________________________________________________________________
-dense_10 (Dense)              (None, 118)               7670      
-=================================================================
+Layer                          Shape                     Parameters
+====================================================================
+Input Layer                    118                       0
+Encoder                        64                        7616
+Batch Normalization            64                        256
+Coding Layer                   32                        2080
+Batch Normalization            32                        128
+Decoder                        64                        2080
+Batch Normalization            64                        256
+Output Layer                   118                       7670
+====================================================================
 Mean squared error was used as error metric and adam optimizer was used while converging the cost function. The output layer was configured to be linear which was equivalen to the number of features given at the input layer. 
 
 #### Experimental Results
+In this section, we analyze the results of experiments performed with autoencoder.
 
 
