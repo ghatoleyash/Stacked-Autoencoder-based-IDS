@@ -44,7 +44,7 @@ Mean squared error was used as error metric and adam optimizer was used while co
 #### Experimental Results
 In this section, we analyze the results of experiments performed with autoencoder.
 
-![GitHub Logo](/images/logo.png)
+![GitHub Logo](/recall&precisionVSthreshold.png)
 
 
 [[ 7463   664]
