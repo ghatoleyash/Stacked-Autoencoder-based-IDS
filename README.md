@@ -1,11 +1,7 @@
-# AutoIDS
+# Deep AutoEncoder IDS
 
 ## Introduction
 Sending a packet inside the host's network will yeild in gain of access that could lead to security breach and leaking of the information. To identify any malicious activity after a system has been attacked it will be too late. Hence, it is important to address this issue when such malicious packets has been sent and must be classified correctly. For this we will be using a deep learning model called autoencoder to classify the packets since deep learning models can recognise the complex patterns very effectively.
-
-## Anomaly Detection
-
-## Batch Normalization
 
 ## AutoEncoder
 Autoencoders are a specific type of feedforward neural networks where the input is the same as the output. They compress the input into a lower-dimensional code and then reconstruct the output from this representation. The code is a compact “summary” or “compression” of the input, also called the latent-space representation.
@@ -32,20 +28,25 @@ The model is trained based on single class since our model has to detect the int
 
 Below table shows the configuration of model which is number of hidden layers and input features that are included into the model.
 
-Layer                          Shape                     Parameters
-Input Layer                    118                       0
-Encoder                        64                        7616
-Batch Normalization            64                        256
-Coding Layer                   32                        2080
-Batch Normalization            32                        128
-Decoder                        64                        2080
-Batch Normalization            64                        256
-Output Layer                   118                       7670
+Layer | Shape | Parameters
+------|-------|-----------
+Input Layer | 118 | 0
+Encoder | 64 | 7616
+Batch Normalization | 64 | 256
+Coding Layer | 32 | 2080
+Batch Normalization | 32 | 128
+Decoder | 64 | 2080
+Batch Normalization | 64 | 256
+Output Layer | 118 | 7670
 
-Mean squared error was used as error metric and adam optimizer was used while converging the cost function. The output layer was configured to be linear which was equivalen to the number of features given at the input layer. 
+Mean squared error was used as error metric and adam optimizer was used while converging the cost function. The output layer was configured to be linear which was equivalent to the number of features given at the input layer. 
 
 #### Experimental Results
 In this section, we analyze the results of experiments performed with autoencoder.
+
+![GitHub Logo](/images/logo.png)
+
+
 [[ 7463   664]
  [   17 17098]]
 threshold =  1.1
