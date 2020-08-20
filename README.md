@@ -3,6 +3,9 @@
 ## Introduction
 Sending a packet inside the host's network will yeild in gain of access that could lead to security breach and leaking of the information. To identify any malicious activity after a system has been attacked it will be too late. Hence, it is important to address this issue when such malicious packets has been sent and must be classified correctly. For this we will be using a deep learning model called autoencoder to classify the packets since deep learning models can recognise the complex patterns very effectively.
 
+## Single Class Classification
+
+
 ## AutoEncoder
 Autoencoders are a specific type of feedforward neural networks where the input is the same as the output. They compress the input into a lower-dimensional code and then reconstruct the output from this representation. The code is a compact “summary” or “compression” of the input, also called the latent-space representation.
 An autoencoder consists of 3 components: encoder, code and decoder. The encoder compresses the input and produces the code, the decoder then reconstructs the input only using this code.
@@ -53,3 +56,8 @@ In this section, we analyze the results of experiments performed with autoencode
 - F1-Score =  95.64
 
 
+## References
+- Dr. D. M. J. Tax 
+- Dr. Wannes Meert
+- Dr. Constantine Dovrolis
+- Dr. Xu Chu on Data cleaning
