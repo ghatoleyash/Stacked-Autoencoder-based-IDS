@@ -48,9 +48,9 @@ Mean squared error was used as error metric and adam optimizer was used while co
 In this section, we analyze the results of experiments performed with autoencoder.
 
 ![GitHub Logo](/recall&precisionVSthreshold.png)
-  Precision & Recall with respect to thresholds
+Precision & Recall with respect to thresholds
 ![GitHub Logo](/confusion_matrix.png)
-  Confusion Matrix
+Confusion Matrix
 - threshold =  1.1
 - Accuracy =  97.3
 - Recall =  91.83
