@@ -3,8 +3,8 @@
 ## Introduction
 Sending a packet inside the host's network will yeild in gain of access that could lead to security breach and leaking of the information. To identify any malicious activity after a system has been attacked it will be too late. Hence, it is important to address this issue when such malicious packets has been sent and must be classified correctly. For this we will be using a deep learning model called autoencoder to classify the packets since deep learning models can recognise the complex patterns very effectively.
 
-## Single Class Classification
-
+## One-Class Classification
+Anomaly detection is referred to as identification of the outilers and such problems can be tackled uing the one-class classification. These algorithms can be treated as unsupervised algorithms where the model is trained using the data contaning single label instance only. While test set includes both class labels and then the model trained on single class predicts the label using the defined error metrics for e.g.: -mean-squared error. One-class classification algorithms can be effective for imbalanced classification datasets where there are none or very few examples of the minority class, or datasets where there is no coherent structure to separate the classes that could be learned by a supervised algorithm. Since, anomalies occur very rarely it is important to train the model with single class which will eventually help the model to distinguish between the anomaly and normal instance as the model is familiar with one class. 
 
 ## AutoEncoder
 Autoencoders are a specific type of feedforward neural networks where the input is the same as the output. They compress the input into a lower-dimensional code and then reconstruct the output from this representation. The code is a compact “summary” or “compression” of the input, also called the latent-space representation.
@@ -48,7 +48,9 @@ Mean squared error was used as error metric and adam optimizer was used while co
 In this section, we analyze the results of experiments performed with autoencoder.
 
 ![GitHub Logo](/recall&precisionVSthreshold.png)
+  Precision & Recall with respect to thresholds
 ![GitHub Logo](/confusion_matrix.png)
+  Confusion Matrix
 - threshold =  1.1
 - Accuracy =  97.3
 - Recall =  91.83
@@ -57,7 +59,8 @@ In this section, we analyze the results of experiments performed with autoencode
 
 
 ## References
-- Dr. D. M. J. Tax 
-- Dr. Wannes Meert
-- Dr. Constantine Dovrolis
-- Dr. Xu Chu on Data cleaning
+- Géron, A. (2017). *Hands-On Machine Learning with Scikit-Learn and Tensorflow*. Sebastopol, CA: O'Reilly Media, Inc.
+- David Tax, 2002, *One-class classification: Concept learning in the absence of counter-examples*, Technische Universiteit Delft, Delft, viewed 30 June 2020, <http://homepage.tudelft.nl/n9d04/thesis.pdf>
+- Xu Chu, 2019, *Data Cleaning*, Georgia Institute of Technology, Atlanta, viewed 21 June 2020, <https://www.cc.gatech.edu/~xchu33/chu-papers/data-cleaning-book-chapter.pdf>
+- Dr. Wannes Meert, 2020, *Crowdsourced wireless spectrum anomaly detection*, Katholieke Universiteit Leuven, Leuven, viewed 2 July 2020, <https://limo.libis.be/primo-explore/fulldisplaydocid=LIRIAS2861563&context=L&vid=Lirias&lang=en_US&search_scope=Lirias&adaptor=Local%20Search%20Engine&tab=default_tab&query=any,contains,staffnr_u0052683&sortby=date&offset=0>
+- "Benchmark dataset for Intrusion Detection System."<http://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html>, Accessed on 3 July 2020
