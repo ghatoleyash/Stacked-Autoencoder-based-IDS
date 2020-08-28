@@ -38,7 +38,7 @@ Encoder | 64 | 7616
 Batch Normalization | 64 | 256
 Coding Layer | 32 | 2080
 Batch Normalization | 32 | 128
-Decoder | 64 | 2080
+Decoder | 64 | 2112
 Batch Normalization | 64 | 256
 Output Layer | 118 | 7670
 
