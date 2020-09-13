@@ -52,7 +52,7 @@ Output Layer | 118 | 7670
 Mean squared error was used as error metric and adam optimizer was used while converging the cost function. The output layer was configured to be linear which was equivalent to the number of features given at the input layer. 
 
 #### Experimental Results
-In this section, we analyze the results of experiments performed with autoencoder.
+In this section, we analyze the results of experiments performed with deep autoencoder model.
 
 ![GitHub Logo](/recall&precisionVSthreshold.png)
 ![GitHub Logo](/confusion_matrix.png)
