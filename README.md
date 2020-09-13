@@ -26,7 +26,7 @@ There are two major problems that exist while training the deep neural network.
 In this section, we discuss details regarding the datasets, preprocessing, and evaluation measures used to assess the efficacy of deep autoencoder model.
 
 #### Datasets
-The dataset used for model evaluation is KDD Cup 1999 Dataset products. It includes 126208 records and total of 42 attributes. There are total of 33 continuous attributes and 9 continuous attributes. The attributes such as protocol_type defines the type of protocol used by the packet to get into the network and service which corresponds to network service on the destination, e.g., http, telnet, etc. 
+The dataset used for model evaluation is KDD Cup 1999 Dataset products. It includes 126208 records and total of 42 attributes. There are total of 33 continuous attributes and 9 continuous attributes. The attributes such as protocol_type defines the type of protocol used by the packet to get into the network and service which corresponds to network service on the destination, e.g. http, telnet, etc. 
 
 #### Preprocessing
 Contained duplicate values removal of those duplicate records and then all of the categorical variables were converted using the one-hot encoding which eventually made total 117 attributes for the dataset. Hence, the remaning continuous attributes were normalized using the standard scaler formula.
