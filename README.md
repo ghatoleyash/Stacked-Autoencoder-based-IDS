@@ -6,7 +6,7 @@ Sending a packet inside the host's network will yeild in gain of access that cou
 ## One-Class Classification
 Anomaly detection is referred to as identification of the outilers and such problems can be tackled uing the one-class classification. These algorithms can be treated as unsupervised algorithms where the model is trained using the data contaning single label instance only. While test set includes both class labels and then the model trained on single class predicts the label using the defined error metrics for e.g.: -mean-squared error. One-class classification algorithms can be effective for imbalanced classification datasets where there are none or very few examples of the minority class, or datasets where there is no coherent structure to separate the classes that could be learned by a supervised algorithm. Since, anomalies occur very rarely it is important to train the model with single class which will eventually help the model to distinguish between the anomaly and normal instance as the model is familiar with one class. 
 
-## AutoEncoder
+## Autoencoder
 Autoencoders are a specific type of feedforward neural networks where the input is the same as the output. They compress the input into a lower-dimensional code and then reconstruct the output from this representation. The code is a compact “summary” or “compression” of the input, also called the latent-space representation.
 An autoencoder consists of 3 components: encoder, code and decoder. The encoder compresses the input and produces the code, the decoder then reconstructs the input only using this code.
 There are 4 hyperparameters that we need to set before training an autoencoder:
@@ -23,7 +23,7 @@ There are two major problems that exist while training the deep neural network.
 
 
 ## Experimental Setup
-In this section, we discuss details regarding the datasets, preprocessing, and evaluation measures used to assess the efficacy of DeepER models.
+In this section, we discuss details regarding the datasets, preprocessing, and evaluation measures used to assess the efficacy of deep autoencoder model.
 
 #### Datasets
 The dataset used for model evaluation is KDD Cup 1999 Dataset products. It includes 126208 records and total of 42 attributes. There are total of 33 continuous attributes and 9 continuous attributes. The attributes such as protocol_type defines the type of protocol used by the packet to get into the network and service which corresponds to network service on the destination, e.g., http, telnet, etc. 
