@@ -1,4 +1,4 @@
-# Deep AutoEncoder IDS
+# Stacked Autoencoder based Intrusion Detection System using One-Class Classification
 
 ## Introduction
 Intrusion Detection System (IDS) is a vital security service which can help us with timely detection. This IDS has become an critical component of network security for this intrusion detection system which is used to monitor network traffic and produce warnings when attacks occur. The data collected by the IDS is obtained from different sources in a computer network and then analyzed for the monitoring purpose. Attacks analyzed by the IDS involve	both intrusions (external attacks) and misuse (internal attacks).Hence, it is important to address this issue when such malicious packets has been sent and must be classified correctly. For this we will be using a deep learning model called autoencoder to classify the packets since, deep learning models can recognise the complex patterns very effectively.
@@ -34,9 +34,7 @@ Contained duplicate values removal of those duplicate records and then all of th
 #### Validation and Testing
 The model is trained based on single class since our model has to detect the intrusion which is very rare. The training set only included the labels with normal connections. But in the validation and test set both labels of the data are included. THe total dataset was split into 60% of training set, 20% of cross validation set and remaining 20% was test set.
 
-#### Model Configuration and Error Metric
-
-Below table shows the configuration of model which is number of hidden layers and input features that are included into the model.
+#### Implementation details
 
 Layer | Shape | Parameters
 ------|-------|-----------
@@ -49,7 +47,12 @@ Decoder | 64 | 2112
 Batch Normalization | 64 | 256
 Output Layer | 118 | 7670
 
+As the architecture given by the above table, where three hidden layers added which comprises of encoding, coding and decoding layer. ReLU was included as the activation function at hidden layers since, it provided the best results as compared to other functions such as tanh and sigmoid. Reason being, there is confined interval where sigmoid and tanh will have nonzero values. To be specific function's derivatives turned zero as the output of function reaches extreme end of left and right side, which is absurd to make backward pass. In addition, the model includes batch normalization at each of the hidden layers to reduce the problem mentioned earlier.
 Mean squared error was used as error metric and adam optimizer was used while converging the cost function. The output layer was configured to be linear which was equivalent to the number of features given at the input layer. 
+
+<div align=center><img src=https://github.com/ghatoleyash/Deep-AutoEncoder-IDS/blob/master/violin_plot.png></div>
+
+The figure above outlines the effect on gradients with and without batch normalization. Layers 2 and 3 feel the involved normalized gradients as opposed to those without BN. First, weights initialized by the model were retrieved and then fetched after the training weights had been completed. Second, we measured the difference between the initial weights and the final weights so that we could obtain the total weight adjustment. Finally, a mean was determined for each of the nodes to which the gradients had been allocated which eventually gives us an overall gradient distribution for each node. Returning to the figure gradients at layer 2 without batch normalization, there were longer tails resulting in more altered nodes with gradients on the negative side compared to those with positive gradients. Lastly, linear function was worked on the output layer to create a representation replicated close to the input
 
 #### Experimental Results
 In this section, we analyze the results of experiments performed with deep autoencoder model.
@@ -57,16 +60,17 @@ In this section, we analyze the results of experiments performed with deep autoe
 ![GitHub Logo](/recall&precisionVSthreshold.png)
 ![GitHub Logo](/confusion_matrix.png)
 
-- threshold =  1.1
-- Accuracy =  97.3
-- Recall =  91.83
-- Precision =  99.77
-- F1-Score =  95.64
+- threshold =  0.3
+- Accuracy =  98.17%
+- Recall =  95.22%
+- Precision =  99.18%
+- F1-Score =  97.15%
 
 
 ## References
 - Géron, Aurélien. Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow: Concepts, tools, and techniques to build intelligent systems. O'Reilly Media, 2019.
 - Tax, David Martinus Johannes. "One-class classification: Concept learning in the absence of counter-examples." (2002): 0584-0584.
 - Chu, Xu, et al. "Data cleaning: Overview and emerging challenges." Proceedings of the 2016 International Conference on Management of Data. 2016.
+- Ioffe, Sergey, and Christian Szegedy. "Batch normalization: Accelerating deep network training by reducing internal covariate shift." arXiv preprint arXiv:1502.03167 (2015).
 - Rajendran, Sreeraj, et al. "Crowdsourced wireless spectrum anomaly detection." IEEE Transactions on Cognitive Communications and Networking 6.2 (2019): 694-703.
-- "Benchmark dataset for Intrusion Detection System."<http://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html>, Accessed on 3 July 2020
+- Ling, Jie, and Chengzhi Wu. "Feature Selection and Deep Learning based Approach for Network Intrusion Detection." 3rd International Conference on Mechatronics Engineering and Information Technology (ICMEIT 2019). Atlantis Press, 2019.
