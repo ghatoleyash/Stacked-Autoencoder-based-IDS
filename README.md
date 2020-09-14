@@ -50,15 +50,15 @@ Output Layer | 118 | 7670
 As the architecture given by the above table, where three hidden layers added which comprises of encoding, coding and decoding layer. ReLU was included as the activation function at hidden layers since, it provided the best results as compared to other functions such as tanh and sigmoid. Reason being, there is confined interval where sigmoid and tanh will have nonzero values. To be specific function's derivatives turned zero as the output of function reaches extreme end of left and right side, which is absurd to make backward pass. In addition, the model includes batch normalization at each of the hidden layers to reduce the problem mentioned earlier.
 Mean squared error was used as error metric and adam optimizer was used while converging the cost function. The output layer was configured to be linear which was equivalent to the number of features given at the input layer. 
 
-<div align=center><img src=https://github.com/ghatoleyash/Deep-AutoEncoder-IDS/blob/master/violin_plot.png></div>
+<div align=center><img src=https://github.com/ghatoleyash/Deep-AutoEncoder-IDS/blob/master/violin_plot_n.png></div>
 
 The figure above outlines the effect on gradients with and without batch normalization. Layers 2 and 3 feel the involved normalized gradients as opposed to those without BN. First, weights initialized by the model were retrieved and then fetched after the training weights had been completed. Second, we measured the difference between the initial weights and the final weights so that we could obtain the total weight adjustment. Finally, a mean was determined for each of the nodes to which the gradients had been allocated which eventually gives us an overall gradient distribution for each node. Returning to the figure gradients at layer 2 without batch normalization, there were longer tails resulting in more altered nodes with gradients on the negative side compared to those with positive gradients. Lastly, linear function was worked on the output layer to create a representation replicated close to the input
 
 #### Experimental Results
 In this section, we analyze the results of experiments performed with deep autoencoder model.
 
-![GitHub Logo](/recall&precisionVSthreshold.png)
-![GitHub Logo](/confusion_matrix.png)
+![GitHub Logo](/recall&precisionVSthreshold_n.png)
+![GitHub Logo](/confusion_matrix_n.png)
 
 - threshold =  0.3
 - Accuracy =  98.17%
