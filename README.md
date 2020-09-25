@@ -32,7 +32,7 @@ Both problems can be solved using batch normalization to some extent. It is achi
 <div align=center><img src=https://github.com/ghatoleyash/Deep-AutoEncoder-IDS/blob/master/bn_equations.png></div>
 Where, m is the batch size, x is the vector of the batch B, \mu_{B} is the mean of batch B, \sigma_B^2 is the variance, {x'}^{(i)} is the normalized value with zero mean and unit variance, \epsilon is the smoothing term
 
-<div align=center><img src=https://github.com/ghatoleyash/Deep-AutoEncoder-IDS/blob/master/scaling_shifting_equation.png></div>
+<div align=center><img src=https://github.com/ghatoleyash/Stacked-Autoencoder-based-IDS/blob/master/scaling%20_shifting_equation.png></div>
 Where, \gamma is the scaling parameter, \beta is the shifting parameter
 
 
