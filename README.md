@@ -30,10 +30,10 @@ There are two major problems that exist while training the deep neural network.
 Both problems can be solved using batch normalization to some extent. It is achieved through a normalization step that fixes the means and variances in the dense layers. Idea behind usage of normalized training sets with the help of various techniques such as min-max and standard scaler can be applied in batch normalization. In this, hidden layers are trained from the outputs received by activation function of the previous layers which can result into skewed distribution. Hence, to fix such issue normalizing the inputs generated inside the layers is also important so that weights are updated equally without any bias. It does the scaling to output of the layer, specifically performing standardization by considering the statistics such as mean and standard deviation per mini batch. In order to improve the weights which cannot be necessarily correspond to the standard-scaler. It is required to train the two new parameters which are scaling and shifting of the standardized layer inputs as part of the training process
 
 <div align=center><img src=https://github.com/ghatoleyash/Deep-AutoEncoder-IDS/blob/master/bn_equations.png></div>
-Where, m is the batch size, x is the vector of the batch B, &mu is the mean of batch B, &ss is the variance, x'(i) is the normalized value with zero mean and unit variance, &ee is the smoothing term
+Where, m is the batch size, x is the vector of the batch B, mu is the mean of batch B, sigma_square is the variance, x'(i) is the normalized value with zero mean and unit variance, epsilon is the smoothing term
 
 <div align=center><img src=https://github.com/ghatoleyash/Stacked-Autoencoder-based-IDS/blob/master/scaling%20_shifting_equation.png></div>
-Where, &gg is the scaling parameter, &bb is the shifting parameter
+Where, gamma is the scaling parameter, beta is the shifting parameter
 
 
 ## Experimental Setup
